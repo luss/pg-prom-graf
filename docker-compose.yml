@@ -1,23 +1,22 @@
 services:
     
     postgresql:
-        image: postgres:15.4
+        image: postgres:17.6
         container_name: postgresql
         environment:
             POSTGRES_USER: ${DB_USERNAME}
             POSTGRES_PASSWORD: ${DB_PASSWORD}
             POSTGRES_DB: ${DB_NAME}
-            PGDATA: /data/postgres
-            TZ: Asia/Tehran
+            PGDATA: /data/postgres17
         healthcheck:
             test: ["CMD-SHELL", "pg_isready -d ${DB_NAME} -U ${DB_USERNAME}"]
             interval: 5s
             timeout: 5s
             retries: 5
         volumes:
-            - postgresql:/data/postgres
+            - postgresql:/data/postgres17
         ports:
-            - "5432:5432"
+            - "${DB_PORT:-5432}:5432"
         restart: unless-stopped
         networks:
             - monitoring

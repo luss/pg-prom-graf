@@ -1,13 +1,13 @@
 # Monitor PostgreSQL With Prometheus and Grafana
 
-[A basic tutorial to follow from original author, Reza; 
+[A basic tutorial to follow from original author 
 ](https://rezakhademix.medium.com/a-complete-guide-to-monitor-postgresql-with-prometheus-and-grafana-5611af229882)
 
 ## Requirements
 * Install Docker
 
 ## Use the following command to run
-* Run `docker compose up -d` (If you installed makefile you can use `make up`)
+* Run `docker compose up -d`
 
 
 ## You'll be able to monitor  
